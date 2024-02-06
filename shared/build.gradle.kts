@@ -26,12 +26,15 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.koin.core)
+            implementation(libs.sql.coroutines.extensions)
         }
         androidMain.dependencies {
             implementation(libs.androidx.lifecycle.viewmodel.ktx)
+            implementation(libs.sql.android.driver)
         }
         iosMain.dependencies {
-
+            implementation(libs.sql.native.driver)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
