@@ -1,4 +1,4 @@
-package de.siebrands.whatineed.db
+package de.siebrands.whatineed.todo.data
 
 data class TodoList(
     val id: Int,

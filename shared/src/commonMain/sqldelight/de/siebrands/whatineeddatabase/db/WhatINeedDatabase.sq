@@ -1,0 +1,15 @@
+CREATE TABLE TodoList (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL
+);
+
+CREATE TABLE TodoItem (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    todoListId INTEGER NOT NULL,
+    name TEXT NOT NULL,
+    isDone INTEGER NOT NULL,
+    FOREIGN KEY (todoListId) REFERENCES TodoList(id) ON DELETE CASCADE
+);
+
+-- Optional: Index auf die TodoListId für bessere Join-Performance
+CREATE INDEX idx_todoitem_todolistid ON TodoItem(todoListId);
