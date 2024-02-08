@@ -8,7 +8,7 @@ android {
     compileSdk = 34
     defaultConfig {
         applicationId = "de.siebrands.whatineed.android"
-        minSdk = 24
+        minSdk = 25
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -46,5 +46,7 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.koin.androidx.compose)
     implementation(libs.koin.android)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.compose.material)
     debugImplementation(libs.compose.ui.tooling)
 }

@@ -1,7 +1,7 @@
-package de.siebrands.whatineed.todo.data
+package de.siebrands.whatineed.todo.application
 
 data class TodoItem(
-    val id: Int,
+    val id: Long,
     val name: String,
     val isDone: Boolean
 )

@@ -13,3 +13,16 @@ CREATE TABLE TodoItem (
 
 -- Optional: Index auf die TodoListId für bessere Join-Performance
 CREATE INDEX idx_todoitem_todolistid ON TodoItem(todoListId);
+
+selectTodoLists:
+SELECT TodoList.*
+FROM TodoList;
+
+insertTodoList:
+INSERT INTO TodoList(name)
+VALUES (?);
+
+selectTodoItems:
+SELECT TodoItem.*
+FROM TodoItem
+WHERE TodoItem.todoListId = ?;
