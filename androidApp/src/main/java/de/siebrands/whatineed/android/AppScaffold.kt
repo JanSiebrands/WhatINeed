@@ -13,6 +13,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import de.siebrands.whatineed.android.Screens.MainPage
 import de.siebrands.whatineed.android.Screens.Screens
+import de.siebrands.whatineed.android.Screens.TodoScreen
+import de.siebrands.whatineed.todo.presentation.TodoItemsState
 import de.siebrands.whatineed.todo.presentation.TodoListsViewModel
 import org.koin.androidx.compose.getViewModel
 
@@ -45,14 +47,24 @@ fun AppNavHost(
             val state by viewModel.todoListState.collectAsState()
             MainPage(
                 uiState = state,
-                onListClicked = {},
+                onListClicked = {
+                    navController.navigate(Screens.Items.route)
+                },
                 onNewHeader = {},
                 onDelete = {},
                 onEditClicked = { s, b -> },
             )
         }
         composable(route = Screens.Items.route) {
-
+            TodoScreen(
+                todoUiState = TodoItemsState(),
+                onNewEntry = {},
+                onCheckedChange = { a, b -> },
+                onShare = { /*TODO*/ },
+                onUpButton = { /*TODO*/ },
+                onDelete = {},
+                onEditClicked = { a, b -> },
+                onDeleteAllDoneEntries = { /*TODO*/ })
         }
     }
 }
