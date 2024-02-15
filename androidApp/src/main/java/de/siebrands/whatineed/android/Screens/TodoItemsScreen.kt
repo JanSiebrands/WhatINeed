@@ -38,6 +38,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
@@ -45,6 +46,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.wear.compose.material.ContentAlpha
+import de.siebrands.whatineed.android.R
 import de.siebrands.whatineed.todo.application.TodoItem
 import de.siebrands.whatineed.todo.presentation.TodoItemsState
 
@@ -138,7 +140,7 @@ fun TodoScreen(
                 showDeleteAllDoneEntriesPopup = false
                 onDeleteAllDoneEntries()
             },
-            title = "stringResource(id = R.string.all_done_entries)"
+            title = stringResource(id = R.string.all_done_entries)
         )
     }
 }
@@ -291,14 +293,14 @@ fun NewEntry(
     }
     AlertDialog(
         title = {
-            Text(text = "stringResource(id = R.string.new_entry)")
+            Text(text = stringResource(id = R.string.new_entry))
         },
         text = {
             OutlinedTextField(
                 value = input,
                 onValueChange = { input = it },
                 label = {
-                    Text(text = "stringResource(id = R.string.new_entry)")
+                    Text(text = stringResource(id = R.string.new_entry))
                 },
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Text,
@@ -316,12 +318,12 @@ fun NewEntry(
         onDismissRequest = onDismissRequest,
         confirmButton = {
             TextButton(onClick = { onSave(input) }) {
-                Text(text = "stringResource(id = R.string.save)")
+                Text(text = stringResource(id = R.string.save))
             }
         },
         dismissButton = {
             TextButton(onClick = onDismissRequest) {
-                Text(text = "stringResource(id = R.string.cancel)")
+                Text(text = stringResource(id = R.string.cancel))
             }
         }
     )

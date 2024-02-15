@@ -31,9 +31,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import de.siebrands.whatineed.android.R
 import de.siebrands.whatineed.todo.application.TodoList
 import de.siebrands.whatineed.todo.presentation.TodoListsState
 
@@ -232,17 +234,17 @@ fun DeleteDialog(
 ) {
     AlertDialog(
         title = {
-            Text(text = "delete")
+            Text(text = stringResource(id = R.string.delete))
         },
         onDismissRequest = onDismiss,
         confirmButton = {
             TextButton(onClick = onDelete) {
-                Text(text = "delete")
+                Text(text = stringResource(id = R.string.delete))
             }
         },
         dismissButton = {
             TextButton(onClick = onDismiss) {
-                Text(text = "dismiss")
+                Text(text = stringResource(id = R.string.dismiss))
             }
         }
     )
@@ -272,14 +274,14 @@ fun ContextMenu(
         onDismissRequest = onDismissContextMenu
     ) {
         DropdownMenuItem(
-            text = { Text(text = "test") },
+            text = { Text(text = stringResource(id = R.string.edit)) },
             onClick = onEditClicked,
             leadingIcon = {
                 Icon(imageVector = Icons.Filled.Edit, contentDescription = null)
             }
         )
         DropdownMenuItem(
-            text = { Text(text = "test") },
+            text = { Text(text = stringResource(id = R.string.delete)) },
             onClick = onDeleteClicked,
             leadingIcon = {
                 Icon(imageVector = Icons.Filled.Delete, contentDescription = null)

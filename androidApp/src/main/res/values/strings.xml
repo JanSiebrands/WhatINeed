@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="delete">delete</string>
+    <string name="dismiss">dismiss</string>
+    <string name="edit">edit</string>
+    <string name="all_done_entries">Do you want to delete all done entries?</string>
+    <string name="new_entry">new entry</string>
+    <string name="save">save</string>
+    <string name="cancel">cancel</string>
+</resources>
