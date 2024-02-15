@@ -22,6 +22,15 @@ insertTodoList:
 INSERT INTO TodoList(name)
 VALUES (?);
 
+updateTodoList:
+UPDATE TodoList
+SET name = ?
+WHERE id = ?;
+
+deleteTodoList:
+DELETE FROM TodoList
+WHERE id = ?;
+
 selectTodoItems:
 SELECT TodoItem.*
 FROM TodoItem

@@ -50,9 +50,15 @@ fun AppNavHost(
                 onListClicked = {
                     navController.navigate(Screens.Items.route)
                 },
-                onNewHeader = {},
-                onDelete = {},
-                onEditClicked = { s, b -> },
+                onNewHeader = {
+                    viewModel.newTodoList(it)
+                },
+                onDelete = {
+                    viewModel.deleteTodoList(it)
+                },
+                onEditClicked = { newName, list ->
+                    viewModel.updateTodoListName(newName, list)
+                },
             )
         }
         composable(route = Screens.Items.route) {

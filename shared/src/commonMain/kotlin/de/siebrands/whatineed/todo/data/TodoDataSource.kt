@@ -25,6 +25,14 @@ class TodoDataSource(private val whatINeedDatabase: WhatINeedDatabase) {
         }
     }
 
+    fun deleteTodoList(id: Long) {
+        whatINeedDatabase.whatINeedDatabaseQueries.deleteTodoList(id)
+    }
+
+    fun updateTodoLost(id: Long, newName: String) {
+        whatINeedDatabase.whatINeedDatabaseQueries.updateTodoList(newName, id)
+    }
+
     private fun mapToTodoList(
         id: Long,
         name: String,

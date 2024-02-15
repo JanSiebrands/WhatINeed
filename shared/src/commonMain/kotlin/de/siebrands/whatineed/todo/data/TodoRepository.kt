@@ -11,4 +11,12 @@ class TodoRepository(private val todoDataSource: TodoDataSource) {
     fun newTodoList(name: String) {
         todoDataSource.insertTodoList(name)
     }
+
+    fun updateTodoList(id: Long, newName: String) {
+        todoDataSource.updateTodoLost(id, newName)
+    }
+
+    fun deleteTodoList(id: Long) {
+        todoDataSource.deleteTodoList(id)
+    }
 }
